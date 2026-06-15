@@ -55,3 +55,28 @@ resource "aws_internet_gateway" "com_igw" {
     Name = "com-internet-gateway"
   }
 }
+
+# =========================
+# ROUTE TABLES
+# =========================
+
+resource "aws_route_table" "com_public_rt" {
+  vpc_id = aws_vpc.com_vpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.com_igw.id
+  }
+
+  tags = {
+    Name = "com-public-route"
+  }
+}
+
+resource "aws_route_table" "com_private_rt" {
+  vpc_id = aws_vpc.com_vpc.id
+
+  tags = {
+    Name = "com-private-route"
+  }
+}
