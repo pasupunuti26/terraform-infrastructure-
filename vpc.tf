@@ -80,3 +80,22 @@ resource "aws_route_table" "com_private_rt" {
     Name = "com-private-route"
   }
 }
+
+# =========================
+# ROUTE TABLE ASSOCIATIONS
+# =========================
+
+resource "aws_route_table_association" "com_web_assoc" {
+  subnet_id      = aws_subnet.com_web_sn.id
+  route_table_id = aws_route_table.com_public_rt.id
+}
+
+resource "aws_route_table_association" "com_api_assoc" {
+  subnet_id      = aws_subnet.com_api_sn.id
+  route_table_id = aws_route_table.com_public_rt.id
+}
+
+resource "aws_route_table_association" "com_db_assoc" {
+  subnet_id      = aws_subnet.com_db_sn.id
+  route_table_id = aws_route_table.com_private_rt.id
+}
