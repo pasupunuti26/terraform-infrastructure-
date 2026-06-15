@@ -8,7 +8,7 @@ provider "aws" {
 # VPC
 # =========================
 
-resource "aws_vpc" "crm_vpc" {
+resource "aws_vpc" "crm-vpc" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
 
