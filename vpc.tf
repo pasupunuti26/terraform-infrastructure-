@@ -196,15 +196,15 @@ resource "aws_network_acl" "db_nacl" {
 
 resource "aws_network_acl_association" "web_nacl_assoc" {
   network_acl_id = aws_network_acl.web_nacl.id
-  subnet_id      = "aws_subnet" "com_web_sn"
+  subnet_id      = aws_subnet.com_web_sn.id
 }
 
 resource "aws_network_acl_association" "api_nacl_assoc" {
   network_acl_id = aws_network_acl.api_nacl.id
-  subnet_id      = "aws_subnet" "com_api_sn"
+  subnet_id      = aws_subnet.com_api_sn.id
 }
 
 resource "aws_network_acl_association" "db_nacl_assoc" {
   network_acl_id = aws_network_acl.db_nacl.id
-  subnet_id      = "aws_subnet" "com_db_sn"
+  subnet_id      = aws_subnet.com_db_sn.id
 }
