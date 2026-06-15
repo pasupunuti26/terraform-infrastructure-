@@ -11,7 +11,7 @@ resource "aws_vpc" "crm_vpc" {
   }
 }
 
-vpc.tf
+VPC.TF
 resource "aws_subnet" "crm_web_sn" {
   vpc_id                  = vpc-0045c8ccc4239220b
   cidr_block              = "10.0.2.0/24"
