@@ -43,3 +43,15 @@ resource "aws_subnet" "com_db_sn" {
     Name = "com-db-subnet"
   }
 }
+
+# =========================
+# INTERNET GATEWAY
+# =========================
+
+resource "aws_internet_gateway" "com_igw" {
+  vpc_id = aws_vpc.com_vpc.id
+
+  tags = {
+    Name = "com-internet-gateway"
+  }
+}
