@@ -2,7 +2,7 @@
 
 resource "aws_instance" "com_web_server" {
 
-  ami           = "ami-xxxxxxxxxxxxxxxxx"
+  ami           = "ami-0ea1cddefe0c4aed5"
   instance_type = "t2.micro"
 
   subnet_id = aws_subnet.com_web_sn.id
