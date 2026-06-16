@@ -10,7 +10,7 @@ resource "aws_instance" "com_web_server" {
   key_name = "eks-key.pem"
 
   vpc_security_group_ids = [
-    aws_security_group.com_web_sg.id
+    aws_security_group.web_sg.id
   ]
 
   user_data = file("setup.sh")
