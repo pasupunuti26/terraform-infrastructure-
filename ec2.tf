@@ -13,8 +13,6 @@ resource "aws_instance" "com_web_server" {
     aws_security_group.web_sg.id
   ]
 
-  user_data = file("setup.sh")
-
   tags = {
     Name = "com-web-server"
   }
