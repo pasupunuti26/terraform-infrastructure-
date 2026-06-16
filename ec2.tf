@@ -7,7 +7,7 @@ resource "aws_instance" "com_web_server" {
 
   subnet_id = aws_subnet.com_web_sn.id
 
-  key_name = "eks-key.pem"
+  key_name = "eks-key"
 
   vpc_security_group_ids = [
     aws_security_group.web_sg.id
